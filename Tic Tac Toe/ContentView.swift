@@ -47,7 +47,12 @@ struct ContentView: View {
         }
         .preferredColorScheme(.dark)
         .alert(isPresented: $gameOver, content: {
-            Alert(title: Text(winMessage))
+            Alert(title: Text(winMessage), dismissButton: .destructive(Text("Play Again"), action: {
+                withAnimation(Animation.default) {
+                    moves = Array(repeating: "", count: 9)
+                    gameOver = false
+                }
+            }))
         })
         .onChange(of: moves, perform: { value in
             checkForWinner()
