@@ -59,6 +59,12 @@ struct ContentView: View {
         checkLine(a: 3, b: 4, c: 5)  // row 2
         checkLine(a: 6, b: 7, c: 8)  // row 3
         
+        checkLine(a: 0, b: 3, c: 6)  // col 1
+        checkLine(a: 1, b: 4, c: 7)  // col 2
+        checkLine(a: 2, b: 5, c: 8)  // col 3
+        
+        checkLine(a: 0, b: 4, c: 8)  // topleft to bottomright
+        checkLine(a: 2, b: 4, c: 6)  // topright to bottomleft
     }
     
     private func checkLine(a: Int, b: Int, c: Int) {
